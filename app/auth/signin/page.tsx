@@ -4,14 +4,16 @@ import { login } from "@/lib/auth"
 
 const SignInPage = () => {
   return (
-    <div className="min-h-[calc(100vh-10rem)] flex items-center justify-center">
-      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg mx-4">
+    <div className="min-h-[calc(100vh-10rem)]  flex items-center justify-center">
+      <div className="max-w-md w-full space-y-8 bg-primary p-8 rounded-xl shadow-lg mx-4">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome to the Joblist</h2>
-          <p className="text-gray-600">Sign in to post jobs or apply for opportunities</p>
+          <h2 className="text-3xl font-bold text-white mb-2">Welcome to the <span className="text-3xl font-extrabold tracking-wide text-white">
+                Job<span className="text-accent">ly</span>
+              </span></h2>
+          <p className="text-white/70">Sign in to post jobs or apply for opportunities</p>
         </div>
         <div className="mt-8">
-          <button onClick={login} className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+          <button onClick={login} className="w-full flex items-center justify-center gap-3 px-4 py-3 border cursor-pointer border-border rounded-lg text-foreground bg-surface hover:bg-surface-hover transition-colors duration-200">
                  <svg
               className="w-6 h-6"
               fill="currentColor"
@@ -28,7 +30,7 @@ const SignInPage = () => {
           </button>
         </div>
 
-        <div className="mt-6 text-center text-sm text-gray-500">By signing in,you agree too our <a href="#" className="text-indigo-600 hover:text-indigo-500">Terms of Service </a>and <a href="#" className="text-indigo-600 hover:text-indigo-500">Privacy Policy</a> </div>
+        <div className="mt-6 text-center text-sm text-white/70">By signing in,you agree too our <a href="#" className="text-accent hover:text-opacity-90">Terms of Service </a>and <a href="#" className="text-accent hover:opacity-90">Privacy Policy</a> </div>
       </div>
     </div>
   )

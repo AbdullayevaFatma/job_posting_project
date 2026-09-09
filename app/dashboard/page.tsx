@@ -47,23 +47,22 @@ export default async function DashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-8">Dashboard</h1>
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">Posted Jobs</h2>
+            <h2 className="text-xl font-semibold text-foreground">Posted Jobs</h2>
             <Link
               href="/jobs/post"
-              className="text-indigo-600 hover:text-indigo-700 font-medium"
+              className="text-accent hover:opacity-90 font-medium"
             >
               Post New Job
             </Link>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm divide-y divide-gray-200">
+          <div className="bg-surface rounded-lg shadow-sm divide-y divide-border">
             {postedJobs.length === 0 ? (
-              <p className="p-6 text-gray-500 text-center">
+              <p className="p-6 text-muted text-center">
                 You haven&apos;t posted any jobs yet.
               </p>
             ) : (
@@ -71,11 +70,11 @@ export default async function DashboardPage() {
                 <div key={job.id} className="p-6">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-1">
+                      <h3 className="text-lg font-medium text-foreground mb-1">
                         {job.title}
                       </h3>
-                      <p className="text-gray-600 mb-2">{job.company}</p>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <p className="text-foreground/70 mb-2">{job.company}</p>
+                      <div className="flex items-center text-sm text-muted">
                         <span>{job.location}</span>
                         <span className="mx-2">•</span>
                         <span>{job.type}</span>
@@ -88,7 +87,7 @@ export default async function DashboardPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
                         {job._count.applications} applications
                       </span>
                     </div>
@@ -96,7 +95,7 @@ export default async function DashboardPage() {
                   <div className="mt-4 flex justify-end space-x-4">
                     <Link
                       href={`/jobs/${job.id}`}
-                      className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                      className="text-accent hover:opacity-90 text-sm font-semibold"
                     >
                       View Job
                     </Link>
@@ -108,13 +107,13 @@ export default async function DashboardPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+          <h2 className="text-xl font-semibold text-foreground mb-6">
             Your Applications
           </h2>
 
-          <div className="bg-white rounded-lg shadow-sm divide-y divide-gray-200">
+          <div className="bg-surface rounded-lg shadow-sm divide-y divide-border">
             {applications.length === 0 ? (
-              <p className="p-6 text-gray-500 text-center">
+              <p className="p-6 text-muted text-center">
                 You haven&apos;t applied to any jobs yet.
               </p>
             ) : (
@@ -122,13 +121,13 @@ export default async function DashboardPage() {
                 <div key={application.id} className="p-6">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-1">
+                      <h3 className="text-lg font-medium text-foreground mb-1">
                         {application.job.title}
                       </h3>
-                      <p className="text-gray-600 mb-2">
+                      <p className="text-foreground/70 mb-2">
                         {application.job.company}
                       </p>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-muted">
                         <span>{application.job.location}</span>
                         <span className="mx-2">•</span>
                         <span>{application.job.type}</span>
@@ -145,7 +144,7 @@ export default async function DashboardPage() {
                       </div>
                     </div>
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
                         application.status === "PENDING"
                           ? "bg-yellow-100 text-yellow-800"
                           : application.status === "ACCEPTED"
@@ -159,7 +158,7 @@ export default async function DashboardPage() {
                   <div className="mt-4 flex justify-end">
                     <Link
                       href={`/jobs/${application.job.id}`}
-                      className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                      className="text-accent hover:opacity-90 text-sm font-semibold"
                     >
                       View Job
                     </Link>

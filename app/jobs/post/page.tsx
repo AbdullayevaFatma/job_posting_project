@@ -37,13 +37,14 @@ export default function PostJobPage() {
   };
   
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Post a Job</h1>
+ <div className="max-w-2xl mx-auto">
+      <h1 className="text-2xl font-bold text-foreground mb-6">Post a Job</h1>
+
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Job Title
           </label>
@@ -52,14 +53,14 @@ export default function PostJobPage() {
             name="title"
             id="title"
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           />
         </div>
 
         <div>
           <label
             htmlFor="company"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Company
           </label>
@@ -68,14 +69,14 @@ export default function PostJobPage() {
             name="company"
             id="company"
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           />
         </div>
 
         <div>
           <label
             htmlFor="location"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Location
           </label>
@@ -84,14 +85,14 @@ export default function PostJobPage() {
             name="location"
             id="location"
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           />
         </div>
 
         <div>
           <label
             htmlFor="type"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Job Type
           </label>
@@ -99,7 +100,7 @@ export default function PostJobPage() {
             name="type"
             id="type"
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           >
             <option value="">Select a type</option>
             <option value="Full-time">Full-time</option>
@@ -112,7 +113,7 @@ export default function PostJobPage() {
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Description
           </label>
@@ -121,14 +122,14 @@ export default function PostJobPage() {
             id="description"
             rows={6}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           />
         </div>
 
         <div>
           <label
             htmlFor="salary"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Salary (optional)
           </label>
@@ -137,13 +138,13 @@ export default function PostJobPage() {
             name="salary"
             id="salary"
             placeholder="e.g., $80,000 - $100,000"
-            className="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="mt-1 block w-full border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent text-foreground bg-surface"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-accent text-white px-4 py-2 rounded-md cursor-pointer hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Post Job
         </button>

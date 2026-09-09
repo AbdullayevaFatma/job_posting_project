@@ -40,7 +40,7 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
     return (
       <button
         disabled
-        className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md opacity-50 cursor-not-allowed"
+        className="w-full bg-accent text-primary px-6 py-3 rounded-md opacity-50 cursor-not-allowed"
       >
         Loading...
       </button>
@@ -53,9 +53,10 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
         <p className="text-green-600 font-medium mb-4">
           Application submitted successfully!
         </p>
+
         <Link
           href="/dashboard"
-          className="text-indigo-600 hover:text-indigo-700 font-medium"
+          className="text-accent hover:opacity-80 font-medium transition-opacity"
         >
           View your applications →
         </Link>
@@ -67,10 +68,11 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
     <>
       <button
         onClick={handleApply}
-        className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-accent text-white px-6 py-3 rounded-md cursor-pointer hover:opacity-90 font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
       >
         Apply for this position
       </button>
+
       {applicationStatus === "error" && (
         <p className="mt-2 text-red-600 text-center">{errorMessage}</p>
       )}

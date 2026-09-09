@@ -18,53 +18,63 @@ export default async function Home() {
 
   return (
     <div className="space-y-12">
-      <section className="text-center py-20 bg-white rounded-lg shadow-sm">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="text-center py-20 bg-surface rounded-lg shadow-sm">
+        <h1 className="text-4xl font-bold text-foreground mb-4">
           Find Your Dream Job
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
+
+        <p className="text-xl text-muted mb-8">
           Discover thousands of job opportunities with top companies
         </p>
+
         <Link
           href="/jobs"
-          className="bg-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-700"
+          className="bg-accent text-white px-6 py-3 rounded-md text-lg font-medium hover:opacity-90 transition-opacity"
         >
           Browse Jobs
         </Link>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Jobs</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6">
+          Recent Jobs
+        </h2>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {recentJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="bg-surface p-6 rounded-lg shadow-sm hover:bg-surface-hover transition-colors"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {job.title}
               </h3>
-              <p className="text-gray-600 mb-2">{job.company}</p>
-              <div className="flex items-center text-sm text-gray-500 mb-4">
+
+              <p className="text-foreground/70 mb-2">{job.company}</p>
+
+              <div className="flex items-center text-sm text-muted mb-4">
                 <span className="mr-4">{job.location}</span>
                 <span>{job.type}</span>
               </div>
-              <p className="text-gray-600 mb-4 line-clamp-2">
+
+              <p className="text-muted mb-4 line-clamp-2">
                 {job.description}
               </p>
+
               <Link
                 href={`/jobs/${job.id}`}
-                className="text-indigo-600 hover:text-indigo-700 font-medium"
+                className="text-accent hover:opacity-80 font-medium transition-opacity"
               >
                 View Details →
               </Link>
             </div>
           ))}
         </div>
+
         <div className="text-center mt-8">
           <Link
             href="/jobs"
-            className="text-indigo-600 hover:text-indigo-700 font-medium"
+            className="text-accent hover:opacity-80 font-semibold transition-opacity"
           >
             View All Jobs →
           </Link>

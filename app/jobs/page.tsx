@@ -35,19 +35,23 @@ export default async function JobsPage({
   });
 
   return (
-    <div className="space-y-8">
-      <div className="bg-white p-6 rounded-lg shadow-sm">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Find Jobs</h1>
+   <div className="space-y-8">
+      <div className="bg-surface p-6 rounded-lg shadow-sm">
+        <h1 className="text-2xl font-bold text-foreground mb-6">
+          Find Jobs
+        </h1>
+
         <form className="grid gap-4 md:grid-cols-3">
           <input
             type="text"
             name="q"
             placeholder="Search jobs..."
-            className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="border border-border bg-background text-foreground placeholder:text-muted rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           />
+
           <select
             name="type"
-            className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="border border-border bg-background text-foreground rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All Types</option>
             <option value="Full-time">Full-time</option>
@@ -55,15 +59,17 @@ export default async function JobsPage({
             <option value="Contract">Contract</option>
             <option value="Internship">Internship</option>
           </select>
+
           <input
             type="text"
             name="location"
             placeholder="Location"
-            className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            className="border border-border bg-background text-foreground placeholder:text-muted rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           />
+
           <button
             type="submit"
-            className="md:col-span-3 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+            className="md:col-span-3 bg-accent text-white px-4 py-2 rounded-md cursor-pointer hover:opacity-90 transition-opacity font-medium"
           >
             Search
           </button>
@@ -74,35 +80,43 @@ export default async function JobsPage({
         {jobs.map((job) => (
           <div
             key={job.id}
-            className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            className="bg-surface p-6 rounded-lg shadow-sm hover:bg-surface-hover transition-colors"
           >
             <div className="flex justify-between items-start">
               <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                <h2 className="text-xl font-semibold text-foreground mb-2">
                   {job.title}
                 </h2>
-                <p className="text-gray-600 mb-2">{job.company}</p>
-                <div className="flex items-center text-sm text-gray-500 mb-4">
+
+                <p className="text-foreground/70 mb-2">
+                  {job.company}
+                </p>
+
+                <div className="flex items-center text-sm text-muted mb-4">
                   <span className="mr-4">{job.location}</span>
                   <span>{job.type}</span>
                 </div>
-                <p className="text-gray-600 mb-4 line-clamp-2">
+
+                <p className="text-muted mb-4 line-clamp-2">
                   {job.description}
                 </p>
               </div>
+
               {job.salary && (
-                <span className="text-lg font-semibold text-gray-900">
+                <span className="text-lg font-semibold text-foreground">
                   {job.salary}
                 </span>
               )}
             </div>
+
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-muted">
                 Posted by {job.postedBy.name}
               </span>
+
               <Link
                 href={`/jobs/${job.id}`}
-                className="text-indigo-600 hover:text-indigo-700 font-medium"
+                className="text-accent hover:opacity-80 font-semibold transition-opacity"
               >
                 View Details →
               </Link>
