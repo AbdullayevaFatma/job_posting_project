@@ -3,6 +3,7 @@
 import { logout } from "@/lib/auth";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -19,9 +20,11 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
+
             <Link
               href={"/jobs"}
-              className="text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-white/80 hover:text-white hover:bg-white/10 transition-colors px-3 py-2 rounded-md text-sm font-medium"
             >
               Browse Jobs
             </Link>
@@ -29,19 +32,19 @@ const Navbar = () => {
               <>
                 <Link
                   href={"/jobs/post"}
-                  className="text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white/80 hover:text-white hover:bg-white/10 transition-colors  px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Post a Job
                 </Link>
                 <Link
                   href={"/dashboard"}
-                  className="text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white/80 hover:text-white hover:bg-white/10 transition-colors  px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Dashboard
                 </Link>
                 <button
                   onClick={logout}
-                  className="text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer  px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Sign Out
                 </button>
@@ -49,7 +52,7 @@ const Navbar = () => {
             ) : (
               <Link
                 href={"/auth/signin"}
-                className="text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-white/80 hover:text-white hover:bg-white/10 transition-colors  px-3 py-2 rounded-md text-sm font-medium"
               >
                 Sign In
               </Link>
