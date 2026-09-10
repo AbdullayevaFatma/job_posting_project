@@ -1,7 +1,6 @@
 "use client";
 
-import { logout } from "@/lib/auth";
-import { useSession } from "next-auth/react";
+import {signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
@@ -43,7 +42,7 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 <button
-                  onClick={logout}
+                  onClick={()=> signOut({ callbackUrl: "/auth/signin" })}
                   className="text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer  px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Sign Out
