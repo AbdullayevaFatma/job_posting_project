@@ -47,18 +47,11 @@ export default async function DashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
       <div className="grid gap-8 md:grid-cols-2">
         <div>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-semibold text-foreground">Posted Jobs</h2>
-            <Link
-              href="/jobs/post"
-              className="text-accent hover:opacity-90 font-medium"
-            >
-              Post New Job
-            </Link>
-          </div>
+          <h2 className="text-xl font-semibold text-foreground mb-6">
+            Posted Jobs
+          </h2>
 
           <div className="bg-surface rounded-lg shadow-sm divide-y divide-border">
             {postedJobs.length === 0 ? (

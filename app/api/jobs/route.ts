@@ -14,7 +14,12 @@ export async function POST(request: Request) {
 
     const job = await prisma.job.create({
       data: {
-        ...data,
+        title: data.title,
+        company: data.company,
+        location: data.location,
+        type: data.type,
+        description: data.description,
+        salary: data.salary || null,
         postedById: session.user.id,
       },
     });

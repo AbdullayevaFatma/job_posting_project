@@ -8,8 +8,6 @@
   --secondary: #8499f8;
   --accent: #ff7c7c;
 
-  
-
   --surface: #ffffff;
   --surface-hover: #f1f8fe;
 
@@ -25,15 +23,12 @@
   --secondary: #8499f8;
   --accent: #fe8c8c;
 
-   
-
   --surface: #19265f;
   --surface-hover: #202f6d;
 
   --muted: #a8b3c7;
   --border: #34447d;
 }
-
 
 @theme inline {
   --color-background: var(--background);

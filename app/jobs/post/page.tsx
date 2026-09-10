@@ -3,10 +3,11 @@
 import type { SyntheticEvent } from "react";
 
 export default function PostJobPage() {
- const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
+    
 
     const data = {
       title: formData.get("title"),
@@ -35,9 +36,9 @@ export default function PostJobPage() {
       console.error(err);
     }
   };
-  
+
   return (
- <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-foreground mb-6">Post a Job</h1>
 
       <form className="space-y-6" onSubmit={handleSubmit}>

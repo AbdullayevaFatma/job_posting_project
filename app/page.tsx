@@ -16,6 +16,7 @@ export default async function Home() {
     },
   });
 
+
   return (
     <div className="space-y-12">
       <section className="text-center py-20 bg-surface rounded-lg shadow-sm">
