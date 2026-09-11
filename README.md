@@ -33,37 +33,31 @@ Users can discover job opportunities, view job details, and manage job-related c
 - **Deployment:** Vercel
 
 
-  
-✨ Features
-🔐 User authentication
-💼 Browse job opportunities
-📄 Job detail pages
-🗄️ Neon PostgreSQL database
-⚡ Prisma ORM
-🌙 Theme support
-📱 Responsive design
+## 🛠️ Scripts
 
-
-## ⚙️ Scripts
+```bash
 npm run dev     # Development server
 npm run build   # Production build
 npm run start   # Production server
 npm run lint    # Run ESLint
+```
 
-⚙️ Environment Variables
+## ⚙️ Environment Variables
 
-Create a .env file:
+Create a `.env` file:
 
+```env
 DATABASE_URL="your_neon_database_url"
 AUTH_SECRET="your_auth_secret"
 AUTH_GITHUB_ID="your_github_id"
 AUTH_GITHUB_SECRET="your_github_secret"
+```
 
 
-# ☁️ Deployment
+## ☁️ Deployment
 
 The project is deployed with Vercel and uses Neon PostgreSQL for the production database.
 
-# 📄 License
+## 📄 License
 
 This project is for educational and portfolio purposes.
